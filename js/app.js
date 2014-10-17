@@ -1,6 +1,15 @@
 $(document).ready(function(){
+	//num = +num;
+	while (isNaN(num) || num <= 0) {
+		var num = parseInt(prompt("Please enter a positive whole number", "0"));
+		alert('You entered: ' + num);
+	}
+	FizzBuzz(num);
+});
+
+var FizzBuzz = function (num) {
 	// first solution
-	for (var i=1;i<101;i++) {
+	for (var i=1;i<num+1;i++) {
 		if ((i % 3) == 0 && (i % 5) == 0) {
 			$("ul").append("<li>FizzBuzz</li>");
 		} else if ((i % 3) == 0) {
@@ -13,7 +22,8 @@ $(document).ready(function(){
 	}
 
 	// second solution
-	for (var i=1;i<101;i++) {
+	for (var i=1;i<num+1;i++) {
+		console.log(i);
 		var list_item = "";
 		if ((i % 3) == 0) {
 			list_item = "Fizz";
@@ -26,4 +36,4 @@ $(document).ready(function(){
 		}
 		$("ul").append("<li>"+list_item+"</li>");
 	}
-});
+};
